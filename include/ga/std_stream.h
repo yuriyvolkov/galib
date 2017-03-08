@@ -21,33 +21,33 @@
 
 #if defined(GALIB_USE_STD_NAMESPACE)
 
-#define STD_ISTREAM     std::istream
-#define STD_OSTREAM     std::ostream
-#define STD_IFSTREAM    std::ifstream
-#define STD_OFSTREAM    std::ofstream
-#define STD_IOS_IN      std::ios::in
-#define STD_IOS_OUT     std::ios::out
-#define STD_IOS_TRUNC   std::ios::trunc
-#define STD_IOS_APP     std::ios::app
-#define STD_IOS_BADBIT  std::ios::badbit
-#define STD_ENDL        std::endl
-#define STD_COUT        std::cout
-#define STD_CERR        std::cerr
+#define STD_ISTREAM std::istream
+#define STD_OSTREAM std::ostream
+#define STD_IFSTREAM std::ifstream
+#define STD_OFSTREAM std::ofstream
+#define STD_IOS_IN std::ios::in
+#define STD_IOS_OUT std::ios::out
+#define STD_IOS_TRUNC std::ios::trunc
+#define STD_IOS_APP std::ios::app
+#define STD_IOS_BADBIT std::ios::badbit
+#define STD_ENDL std::endl
+#define STD_COUT std::cout
+#define STD_CERR std::cerr
 
 #else
 
-#define STD_ISTREAM     istream
-#define STD_OSTREAM     ostream
-#define STD_IFSTREAM    ifstream
-#define STD_OFSTREAM    ofstream
-#define STD_IOS_IN      ios::in
-#define STD_IOS_OUT     ios::out
-#define STD_IOS_TRUNC   ios::trunc
-#define STD_IOS_APP     ios::app
-#define STD_IOS_BADBIT  ios::badbit
-#define STD_ENDL        endl
-#define STD_COUT        cout
-#define STD_CERR        cerr
+#define STD_ISTREAM istream
+#define STD_OSTREAM ostream
+#define STD_IFSTREAM ifstream
+#define STD_OFSTREAM ofstream
+#define STD_IOS_IN ios::in
+#define STD_IOS_OUT ios::out
+#define STD_IOS_TRUNC ios::trunc
+#define STD_IOS_APP ios::app
+#define STD_IOS_BADBIT ios::badbit
+#define STD_ENDL endl
+#define STD_COUT cout
+#define STD_CERR cerr
 
 #endif
 

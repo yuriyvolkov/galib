@@ -5,15 +5,15 @@
   Copyright (c) 1995-1996 Massachusetts Institute of Technology
                           all rights reserved
 
-  Main header for the GAlibrary.  This header is provided to make it easy to 
-include GAlib components in your code.  It includes all of the genetic 
-algorithm classes as well as all of the genome classes (plus a bunch of 
+  Main header for the GAlibrary.  This header is provided to make it easy to
+include GAlib components in your code.  It includes all of the genetic
+algorithm classes as well as all of the genome classes (plus a bunch of
 comments giving an overview of the library).
-  References to 'Goldberg's Book' are to David E Goldberg's book, and 
+  References to 'Goldberg's Book' are to David E Goldberg's book, and
 references to 'Numerical Recipes' are to the Numerical Recipes in C book.
 
 "Genetic Algorithms in Search, Optimization, and Machine Learning"
-    Goldberg, David Edward, 1953- 
+    Goldberg, David Edward, 1953-
     Addison-Wesley Pub. Co., (c) 1989
     ISBN 0-201-15767-5
 
@@ -27,8 +27,8 @@ Overview of who does what in the GAlibrary -- see http://lancet.mit.edu/ga/
 Here are the library capabilities and which parts of the library are involved:
 
 Genetic Algorithm
-    This object contains the operators and data needed to perform the 
-  optimization.  There are a few basic GA implementations in the library, 
+    This object contains the operators and data needed to perform the
+  optimization.  There are a few basic GA implementations in the library,
   including the basic 'simple' genetic algorithm described by Goldberg, the
   'steady-state' genetic algorithm, the 'incremental' genetic algorithm based
   on the Genitor model, and the 'parallel' genetic algorithm that uses multiple
@@ -48,7 +48,7 @@ Genome
   to use if you do not want to define your own.
 
 Population
-    Each population contains a bunch of genomes.  Populations know how to 
+    Each population contains a bunch of genomes.  Populations know how to
   select genomes.  They also have housekeeping routines such as replace,
   remove, and add.  A population can be given some intelligence by using its
   evaluation member rather than evaluting each individual on its own.
@@ -56,7 +56,7 @@ Population
 Selection
     Selection is implemented as a member function of the population object.
   Any GA simply calls the population's 'select' member to get the genome that
-  it needs to work with.  
+  it needs to work with.
 
 Crossover/Mating
     Crossover is implemented as a separate object.  We have various crossover
@@ -80,8 +80,8 @@ Crossover/Mating
   specific crossover type - they call the mating methods based upon the high
   level interface definition.
 
-Mutation 
-    Mutation is defined at the genome level and is implemented as a member 
+Mutation
+    Mutation is defined at the genome level and is implemented as a member
   function of the base genome class.  Each genome must define its own
   mutation method that will operate on its specific data type.
 
@@ -94,21 +94,21 @@ Replacement strategies
 Convergence and completion
     The GA defines a 'done' member that calls a user-defineable completion
   function to determine whether or not the GA is finished.  Built-in completion
-  routines include population-converged, best-converged and 
+  routines include population-converged, best-converged and
   number-of-generations.
 
 Fitness vs Objective
-    Note the difference between fitness function and objective 
+    Note the difference between fitness function and objective
   function.  In this library, the objective function is user-defined and tells
   (on an arbitrary scale) how well a genome performs relative to other
-  genomes.  The fitness function, on the other hand, takes objective function 
-  scores and processes them to produce a number for each genome that 
+  genomes.  The fitness function, on the other hand, takes objective function
+  scores and processes them to produce a number for each genome that
   represents its fitness for mating/selection.
     The selection strategies include roulette wheel, tournament, linear
   ranking, and stochastic sampling.  See the selector headers for more details
   about each strategy and its implementation.
-    Speciation is included as a type of selection.  To use the speciating 
-  selector you must define a distance function.  See the selector header for 
+    Speciation is included as a type of selection.  To use the speciating
+  selector you must define a distance function.  See the selector header for
   more details.
     Scaling methods are loosely coupled with the selection strategies.  They
   include linear scaling, sigma truncation, and ranking.  See the fitness
@@ -122,7 +122,7 @@ Elitism
 
 Initialization
     Each genome has its own initialization operator.  When a GA is
-  initialized, it initializes its populations, which in turn tells each 
+  initialized, it initializes its populations, which in turn tells each
   chromomosome to initialize itself.  You can use the initialization method to
   bias an initial population.  This can be done either at the population level
   by customizing the population's initialization operator or at the genome
@@ -135,8 +135,8 @@ Basic usage
 
   You create a GA by first instantiating the non-default parts that you want to
 use.  For example, if you want a binary string genome with uniform crossover
-and roulette wheel selection, you would define an objective function, 
-instantiate a genome, instantiate a uniform crossover operator, then 
+and roulette wheel selection, you would define an objective function,
+instantiate a genome, instantiate a uniform crossover operator, then
 instantiate the GA.  Since the roulette wheel selector is the default, you do
 not need to instantiate one to use that method.
   In every case you MUST define an objective function and you MUST instantiate
