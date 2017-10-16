@@ -11,31 +11,31 @@ add_test(NAME RNG-means COMMAND randtest +means)
 
 add_executable(ex1 ex1.cpp)
 target_link_libraries(ex1 ga)
-add_test(SimpleGA+2DBinaryStringGenome  ex1)
+add_test(test-1 ex1)
 
 add_executable(ex2 ex2.cpp)
 target_link_libraries(ex2 ga)
-add_test(SimpleGA+Bin2DecGenome ex2)
+add_test(test-2 ex2)
 
 add_executable(ex3 ex3.cpp)
 target_link_libraries(ex3 ga)
-add_test(SimpleGA+2DBinaryStringGenome-2d-pattern ex3)
+add_test(test-3 ex3)
 
 add_executable(ex4 ex4.cpp)
 target_link_libraries(ex4 ga)
-add_test(SteadyStateGA+3DBinaryStringGenome ex4)
+add_test(test-4 ex4)
 
 add_executable(ex5 ex5.cpp)
 target_link_libraries(ex5 ga)
-add_test(GASteadyStateGA+2DBinStr+Bin2Dec-composite-genome ex5)
+add_test(test-5 ex5)
 
 add_executable(ex6 ex6.cpp)
 target_link_libraries(ex6 ga)
-add_test(GASteadyStateGA+TreeGenome ex6)
+add_test(test-6 ex6)
 
 add_executable(ex7 ex7.cpp)
 target_link_libraries(ex7 ga)
-add_test(GASteadyStateGA+GA2DBinaryStringGenome ex7)
+add_test(test-7 ex7)
 
 add_executable(ex8 ex8.cpp)
 target_link_libraries(ex8 ga)
