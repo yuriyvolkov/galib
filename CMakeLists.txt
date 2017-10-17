@@ -11,8 +11,8 @@ else()
 endif()
 
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall -Werror -march=native -O3")
-set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")
-set(SOURCE_DIR "${CMAKE_SOURCE_DIR}/src")
+set(SOURCE_DIR "${CMAKE_SOURCE_DIR}/src/ga")
+set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/src")
 
 # testing
 option(ENABLE_TESTING "Enable testing and building the tests." ON)
