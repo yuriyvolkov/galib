@@ -1,3 +1,8 @@
+2017-11-12  Yuri Volkov
+    * migrate to cmake
+    * convert README files to Markdown
+    * remove GNU examples
+
 2005-01-12  Matthew Wall  <mwall@gouda.local>
 
 	* makefile: rev to final release number

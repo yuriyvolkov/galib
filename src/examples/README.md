@@ -22,15 +22,6 @@ The second example shows solutions to the travelling salesman problem
 evolving in real time.  You can compare three different algorithms:
 simple, steady-state, and deterministic crowding.
 
-###gnu
-This directory contains the code for an example that uses the BitString
-object from the GNU class library.  The example illustrates how to 
-incorporate an existing object (in this case the BitString) into a
-GAlib Genome type.  The gnu directory contains the source code needed
-for the BitString object (taken from the GNU library) plus the two
-files (bitstr.h and bitstr.C) needed to define the new genome type and
-the example file that runs the GA (gnuex.C).
-
 ###pvmind
 This directory contains code that illustrates how to use GAlib with
 PVM in a master-slave configuration wherein the master process is the
