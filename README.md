@@ -1,4 +1,4 @@
-#GAlib: A C++ Genetic Algorithm Library
+# GAlib: A C++ Genetic Algorithm Library
 *Copyright (c) 1994-1996 MIT, 1996-2005 Matthew Wall*
 
 GAlib is a C++ library of genetic algorithm objects.  With GAlib you can add 

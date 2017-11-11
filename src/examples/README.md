@@ -1,6 +1,6 @@
 # Unix examples
 
-###graphic
+### graphic
 You can learn a great deal by watching the genetic algorithm evolve.
 This directory contains two examples that show populations of solutions
 evolving in real time.  Both programs use X resources as well as
@@ -22,14 +22,14 @@ The second example shows solutions to the travelling salesman problem
 evolving in real time.  You can compare three different algorithms:
 simple, steady-state, and deterministic crowding.
 
-###pvmind
+### pvmind
 This directory contains code that illustrates how to use GAlib with
 PVM in a master-slave configuration wherein the master process is the
 genetic algorithm with a single population and each slave process is
 a genome evaluator.  The master sends individual genomes to the slave
 processes to be evaluated then the slaves return the evaluations.
 
-###pvmpop
+### pvmpop
 This directory contains code that illustrates a PVM implementation of
 parallel populations.  The master process initiates a cluster of slaves
 each of which contains a single population.  The master process 
