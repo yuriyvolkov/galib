@@ -9,6 +9,10 @@ add_test(NAME RNG-histogram COMMAND randtest +hist)
 add_test(NAME RNG-bounds COMMAND randtest +bnds)
 add_test(NAME RNG-means COMMAND randtest +means)
 
+add_executable(seed seed.cpp)
+target_link_libraries(seed ga)
+add_test(seedtest seed)
+
 add_executable(ex1 ex1.cpp)
 target_link_libraries(ex1 ga)
 add_test(test-1 ex1)
