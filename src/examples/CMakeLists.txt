@@ -1,2 +1,1 @@
-add_subdirectory(gnu)
-#add_subdirectory(graphic)
+add_subdirectory(graphic)

@@ -49,17 +49,12 @@ double x[MAX_TOWNS],y[MAX_TOWNS];
 int ntowns = 0;
 float width, height;
 
-
 float Objective(GAGenome&);
 int   Mutator(GAGenome&, float);
 void  Initializer(GAGenome&);
 float Comparator(const GAGenome&, const GAGenome&);
 int   Crossover(const GAGenome&, const GAGenome&, GAGenome*, GAGenome*);
 void  ERXOneChild(const GAGenome&, const GAGenome&, GAGenome*);
-
-
-
-
 
 #ifdef USE_MOTIF
 
@@ -293,53 +288,6 @@ main(int argc, char** argv) {
   return 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Boolean
 Evolve(int n){
   if((n < 0 && ga->done() == gaFalse) || ga->generation() < n){
@@ -445,25 +393,6 @@ DrawIndividual(GAGenome& g, Display* display, Drawable drawable, GC gc,
 
 #undef SCALE
 #undef BUF
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Here are the genome operators that we want to use for this problem.
 float
@@ -624,8 +553,6 @@ ERXOneChild(const GAGenome& g1, const GAGenome& g2, GAGenome* c1) {
   sis.head();         // set iterator to head of list
 }
 
-
-
 float
 Comparator(const GAGenome& g1, const GAGenome& g2) 
 {
@@ -660,9 +587,6 @@ Comparator(const GAGenome& g1, const GAGenome& g2)
   return (dist);
 }
 
-
-
-
 //   Here we override the _write method for the List class.  This lets us see
 // exactly what we want (the default _write method dumps out pointers to the
 // data rather than the data contents).
@@ -671,7 +595,7 @@ Comparator(const GAGenome& g1, const GAGenome& g2)
 //   Notice that you can override ANY function of a template class.  This is
 // called "specialization" in C++ and it lets you tailor the behaviour of a 
 // template class to better fit the type.
-int
+template <> int
 GAListGenome<int>::write(ostream & os) const
 {
   int *cur, *head;
@@ -692,37 +616,6 @@ GAListGenome<int>::write(ostream & os) const
 template class GAList<int>;
 template class GAListGenome<int>;
 #endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Here are two versions of the graphic interface.  One version for those of
 // you with MOTIF on your systems, and one version for those of you with only

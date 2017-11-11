@@ -121,7 +121,7 @@ void DumpParamsCB(Widget, XtPointer, XtPointer);
 void DumpScoreCB(Widget, XtPointer, XtPointer);
 void DrawPopulation(Widget, const GAPopulation&, GC, GC);
 
-static char *fallbacks[] = {
+static const char *fallbacks[] = {
   "*shell.title: gaview",
   "*background:	thistle4",
   "*canvas.background:	black",
@@ -164,44 +164,35 @@ static char *fallbacks[] = {
   (char *)NULL
 };
 
-
-
-
-static XtResource resources[] = {
-#define Offset(field) (XtOffset(AppDataPtr, field))
+XtResource resources[] = {
   {"bestColor", XtCForeground, XtRPixel, sizeof(Pixel),
-     Offset(bestcolor), XtRString, (XtPointer)XtDefaultForeground},
+   XtOffset(AppDataPtr, bestcolor), XtRString, (XtPointer)XtDefaultForeground},
   {"populationColor1", XtCForeground, XtRPixel, sizeof(Pixel),
-     Offset(popcolor[0]), XtRString, (XtPointer)XtDefaultForeground},
+   XtOffset(AppDataPtr, popcolor[0]), XtRString, (XtPointer)XtDefaultForeground},
   {"populationColor2", XtCForeground, XtRPixel, sizeof(Pixel),
-     Offset(popcolor[1]), XtRString, (XtPointer)XtDefaultForeground},
+   XtOffset(AppDataPtr, popcolor[1]), XtRString, (XtPointer)XtDefaultForeground},
   {"populationColor3", XtCForeground, XtRPixel, sizeof(Pixel),
-     Offset(popcolor[2]), XtRString, (XtPointer)XtDefaultForeground},
+   XtOffset(AppDataPtr, popcolor[2]), XtRString, (XtPointer)XtDefaultForeground},
   {"populationColor4", XtCForeground, XtRPixel, sizeof(Pixel),
-     Offset(popcolor[3]), XtRString, (XtPointer)XtDefaultForeground},
+   XtOffset(AppDataPtr, popcolor[3]), XtRString, (XtPointer)XtDefaultForeground},
   {"populationColor5", XtCForeground, XtRPixel, sizeof(Pixel),
-     Offset(popcolor[4]), XtRString, (XtPointer)XtDefaultForeground},
+   XtOffset(AppDataPtr, popcolor[4]), XtRString, (XtPointer)XtDefaultForeground},
   {"ga", "GA", XtRInt, sizeof(int),
-     Offset(whichGA), XtRImmediate, (XtPointer)2},
+   XtOffset(AppDataPtr, whichGA), XtRImmediate, (XtPointer)2},
   {"genome", "Genome", XtRInt, sizeof(int),
-     Offset(whichGenome), XtRImmediate, (XtPointer)0},
+   XtOffset(AppDataPtr, whichGenome), XtRImmediate, (XtPointer)0},
   {"function", "Function", XtRInt, sizeof(int),
-     Offset(whichFunction), XtRImmediate, (XtPointer)3},
+   XtOffset(AppDataPtr, whichFunction), XtRImmediate, (XtPointer)3},
   {"generationsPerStep", "GenerationsPerStep", XtRInt, sizeof(int),
-     Offset(geninc), XtRImmediate, (XtPointer)10}
-#undef Offset
+   XtOffset(AppDataPtr, geninc), XtRImmediate, (XtPointer)10}
 };
 
-static XrmOptionDescRec options[] = {
+XrmOptionDescRec options[] = {
   {"ga",       "ga",                 XrmoptionSepArg, 0},
   {"genome",   "genome",             XrmoptionSepArg, 0},
   {"function", "function",           XrmoptionSepArg, 0},
   {"geninc",   "generationsPerStep", XrmoptionSepArg, 0}
 };
-
-
-
-
 
 float RealObjective(GAGenome&);
 float Bin2DecObjective(GAGenome&);
@@ -215,13 +206,6 @@ Function obj[] = { Function1, Function2, Function3, Function4 };
 float minx[] = {-6, -60, -500, -10 };
 float maxx[] = { 6,  60,  500, 10 };
 float ai[25],bi[25];
-
-
-
-
-
-
-
 
 int
 main(int argc, char** argv) {
@@ -248,7 +232,7 @@ main(int argc, char** argv) {
 
   Widget toplevel = XtAppInitialize(&theAppData.appc, APP_CLASS, 
 				    options, XtNumber(options),
-				    &argc, argv, fallbacks, (ArgList)NULL, 0);
+				    &argc, argv, const_cast<char**>(fallbacks), (ArgList)NULL, 0);
   XtGetApplicationResources(toplevel, (XtPointer) &theAppData,
                             resources, XtNumber(resources), NULL, 0);
 
@@ -384,27 +368,6 @@ main(int argc, char** argv) {
   return 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 void
 UpdateCounter(GAGeneticAlgorithm* ga) {
 #ifdef USE_MOTIF
@@ -497,11 +460,7 @@ DumpScoreCB(Widget, XtPointer cd, XtPointer){
     ((GAGeneticAlgorithm*)cd)->population().best().score() << "\n";
 }
 
-
-
-
-
-// This routine draws the entire population or a single individual depending 
+// This routine draws the entire population or a single individual depending
 // on the value of the single flag.  It needs to know how much of a
 // buffer to use for spacing between individuals.  We assume that each 
 // individual draws from its centroid.
@@ -526,7 +485,6 @@ DrawCB(Widget w, XtPointer cd, XtPointer){
     DrawPopulation(w, data->ga->population(), data->dotgc[0], data->bestgc);
   }
 }
-
 
 void
 DrawPopulation(Widget widget, const GAPopulation& pop, GC dotgc, GC bestgc) {
@@ -592,26 +550,6 @@ DrawPopulation(Widget widget, const GAPopulation& pop, GC dotgc, GC bestgc) {
 
 #undef BUF
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // These are the objective functions for the genomes.  They simply call the
 // appropriate function.
 float
@@ -626,18 +564,6 @@ RealObjective(GAGenome& g) {
   GARealGenome& genome = (GARealGenome&)g;
   return (obj[theAppData.whichFunction])(genome.gene(0), genome.gene(1));
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*****************************************************************************/
@@ -656,7 +582,6 @@ Function1(float x, float y)
   float z = -((x*x+y-11)*(x*x+y-11)+(x+y*y-7)*(x+y*y-7))/200 + 10;
   return z;
 }
-
 
 /*****************************************************************************/
 /* Type:        2D FUNCTION                                                  */
@@ -681,7 +606,6 @@ Function2(float x, float y)
   return z;
 }
 
-
 /*****************************************************************************/
 /* Type:        2D FUNCTION                                                  */
 /* Name:        Objective2D_3                                                */
@@ -696,7 +620,6 @@ Function3(float x, float y)
   float z = fabs(x) * sin(sqrt(fabs(x))) + fabs(y) * sin(sqrt(fabs(y)));
   return 500 + z;
 }
-
 
 /*****************************************************************************/
 /* Type:        2D FUNCTION                                                  */
@@ -714,22 +637,6 @@ Function4(float x, float y)
   z = (0.5 - z);
   return (z);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Here are two versions of the graphic interface.  One version for those of
 // you with MOTIF on your systems, and one version for those of you with only
