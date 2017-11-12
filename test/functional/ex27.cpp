@@ -29,7 +29,6 @@ any standard 3D cross-platform API, so you get this instead.)
 // for some compilers (e.g. metrowerks) this must come after any
 // specializations or you will get 'multiply-defined errors when you compile.
 #if !defined(GALIB_USE_AUTO_INST)
-#include <GAList.cpp>
 GALIB_INSTANTIATION_PREFIX GAList<int>;
 GALIB_INSTANTIATION_PREFIX GA1DArrayGenome<float>;
 #endif
