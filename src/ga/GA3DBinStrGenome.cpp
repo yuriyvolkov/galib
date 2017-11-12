@@ -11,7 +11,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cctype>
-#include <string>
+#include <cstring>
 #include <ga/gaerror.h>
 #include <ga/garandom.h>
 #include <ga/GA3DBinStrGenome.h>

@@ -15,7 +15,7 @@ information).
 #include <cstdio>
 #include <cstdlib>
 #include <cctype>
-#include <string>
+#include <cstring>
 #include <ga/gaerror.h>
 #include <ga/GABin2DecGenome.h>
 

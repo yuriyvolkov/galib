@@ -13,7 +13,7 @@ imply the specific implementation of the container class).
 #ifndef _ga_allele_h_
 #define _ga_allele_h_
 
-#include <string>
+#include <cstring>
 #include <ga/gaconfig.h>
 #include <ga/garandom.h>
 #include <ga/std_stream.h>

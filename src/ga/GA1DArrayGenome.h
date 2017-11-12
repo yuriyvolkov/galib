@@ -27,7 +27,7 @@ that for common instantiations (float, char).
 
 #include <cstdio>
 #include <cstdlib>
-#include <string>
+#include <cstring>
 
 #include <ga/GAArray.h>
 #include <ga/GAGenome.h>

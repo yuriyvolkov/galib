@@ -14,7 +14,7 @@
 
 #include <cstdio>
 #include <cstdlib>
-#include <string>
+#include <cstring>
 #include <ga/GAArray.h>
 #include <ga/GAGenome.h>
 #include <ga/GAAllele.h>
