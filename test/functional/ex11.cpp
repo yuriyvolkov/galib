@@ -148,7 +148,6 @@ int GAListGenome<int>::write(ostream &os) const
 // specializations or you will get 'multiply-defined errors when you compile.
 #if !defined(GALIB_USE_AUTO_INST)
 
-#include <GAListGenome.cpp>
 GALIB_INSTANTIATION_PREFIX GAList<int>;
 GALIB_INSTANTIATION_PREFIX GAListGenome<int>;
 #endif
