@@ -8,9 +8,9 @@
  DESCRIPTION:
   This file contains all of the error messages for the library.
 ---------------------------------------------------------------------------- */
-#include <string.h>
+#include <cstring>
 #include <ga/gaerror.h>
-#include <stdio.h>
+#include <cstdio>
 
 char gaErrMsg[512];
 char _gaerrbuf1[120];

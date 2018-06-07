@@ -12,10 +12,10 @@ are limits to the size of the numbers you can use (ie you're limited to the
 number of bits that can represent a float - see the converters file for more
 information).
 ---------------------------------------------------------------------------- */
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cstring>
 #include <ga/gaerror.h>
 #include <ga/GABin2DecGenome.h>
 

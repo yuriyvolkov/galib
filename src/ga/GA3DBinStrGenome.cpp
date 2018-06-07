@@ -8,10 +8,10 @@
  DESCRIPTION:
   Source file for the 3D binary string genome.  See the 1D genome for comments.
 ---------------------------------------------------------------------------- */
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cstring>
 #include <ga/gaerror.h>
 #include <ga/garandom.h>
 #include <ga/GA3DBinStrGenome.h>

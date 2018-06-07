@@ -7,10 +7,9 @@
 
   Source file for the base genetic algorithm object.
 ---------------------------------------------------------------------------- */
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include <ga/GABaseGA.h>
-#include <ga/garandom.h>
 #include <ga/gaversion.h> // gets the RCS string in for ident purposes
 
 //#define GA_DEBUG

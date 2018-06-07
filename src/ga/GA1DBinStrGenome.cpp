@@ -8,10 +8,10 @@
  DESCRIPTION:
   Source file for the 1D binary string genome.
 ---------------------------------------------------------------------------- */
-#include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
+#include <cstdio>
+#include <cstdlib>
+#include <cctype>
+#include <cstring>
 #include <ga/gaerror.h>
 #include <ga/garandom.h>
 #include <ga/GA1DBinStrGenome.h>
